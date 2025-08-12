@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import Restaurant
 
-# Create your views here.
+def homepage(request):
+    restaurant = Restaurant.objrcts.first()
+    return render(request, 'homepage.html', {'restaurant_name': restaurant.name if restaurant else 'My Restaurant'})
