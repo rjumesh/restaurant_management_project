@@ -16,3 +16,6 @@ def menu_list(request):
         {"name": "Paneer tikka", "price":250, "description": "classic paneer tikka with spices"}
     ] 
     return render(request, 'menuview.html', {"menu_items": menu_items})
+
+def contact(request):
+    return render(request,'contact.html')
