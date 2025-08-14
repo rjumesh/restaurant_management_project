@@ -3,7 +3,11 @@ from .models import Restaurant
 
 class homepage(request):
     restaurant = Restaurant.objects.first()
-    return render(request, 'homepage.html', {'restaurant_name' : restaurant.name if restaurant else 'my Restaurant'})
+    context = { 
+        'restaurant_name' : restaurant.name if restaurant else 'my Restaurant'
+        'phone_number' : restaurant.phone_number if restaurant else 'phone number'
+        }
+    return render(request, 'homepage.html', context)
 
 def about_page(request):
     return render(request, 'about.html')
