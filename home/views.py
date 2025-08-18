@@ -18,7 +18,7 @@ def menu_list(request):
         {"name": "margherita pizza", "price":250, "description": "classic pizza with tomato and mozzarella"}
         {"name": "veg burger", "price":150, "description": "classic burger with tomato and mozzarella"}
         {"name": "pasta", "price":300, "description": "classic pasta"}
-        {"name": "Paneer tikka", "price":250, "description": "classic paneer tikka with spices"}
+        {"name": "Paneer tikka", "price":250, "description": "classic paneer Tikka with spices"}
     ] 
     return render(request, 'menuview.html', {"menu_items": menu_items})
 
