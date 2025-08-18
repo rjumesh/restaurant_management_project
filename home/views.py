@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Restaurant
+from .models import MenuItem
 
 class homepage(request):
     restaurant = Restaurant.objects.first()
@@ -30,3 +31,9 @@ def contact(request):
     else:
         form = ContactForm()
     return render(request,'contact.html')
+
+
+
+def menu_list(request):
+    menu_items = MenuItem.objects.all()
+    return render(request, 'menu.html', {'menu_items': menu_items})
