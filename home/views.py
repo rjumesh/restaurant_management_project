@@ -2,21 +2,22 @@ from django.shortcuts import render
 from .models import Restaurant
 from .models import MenuItem
 
-class homepage(request):
-    restaurant = Restaurant.objects.first()
-    context = { 
-        'restaurant_name' : restaurant.name if restaurant else 'my Restaurant'
-        'phone_number' : restaurant.phone_number if restaurant else 'phone number'
-        }
-    return render(request, 'homepage.html', context)
-    def homepage(request):
-        restaurant = Restaurant.objects.first()  # get first restaurant (you can filter by logged in later)
-        location = RestaurantLocation.objects.first()  # get first location record
 
-        return render(request, "homepage.html", {
-        "restaurant": restaurant,
-        "location": location
-        })
+
+
+
+
+
+
+def homepage(request):
+    restaurant = Restaurant.objects.first()
+    location = RestaurantLocation.objects.first()
+
+    return render(request, "homepage.html", {
+    "restaurant": restaurant,
+    "location": location
+    })
+    
 def about_page(request):
     return render(request, 'about.html')
     
