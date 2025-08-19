@@ -9,7 +9,14 @@ class homepage(request):
         'phone_number' : restaurant.phone_number if restaurant else 'phone number'
         }
     return render(request, 'homepage.html', context)
+    def homepage(request):
+        restaurant = Restaurant.objects.first()  # get first restaurant (you can filter by logged in later)
+        location = RestaurantLocation.objects.first()  # get first location record
 
+        return render(request, "homepage.html", {
+        "restaurant": restaurant,
+        "location": location
+        })
 def about_page(request):
     return render(request, 'about.html')
     
