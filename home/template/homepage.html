@@ -37,17 +37,17 @@
         <p style="color: #6c757d; font-size: 1.2rem; max-width: 600px; margin: auto;">organize your thoughts, save important ideas.</p>
          href="api/notes/" class="btn btn-success btn-lg mt-4" style="padding: 10px 30px; font-size: 1.1rem; border-radius: 3opx;">view Notes</a>
     
-    <h1 class="mb-3">Welcome to {{ restaurant.name }}</h1>
-    <p class="lead">Organize your thoughts, save important ideas.</p>
+        <h1 class="mb-3">Welcome to {{ restaurant.name }}</h1>
+        <p class="lead">Organize your thoughts, save important ideas.</p>
 
-    <h3 class="mt-4">📍 Our Address</h3>
-    {% if location %}
-    <p>{{ location.address }}, {{ location.city }}, {{ location.state }} - {{ location.zip_code }}</p>
-    {% else %}
-    <p><em>No address added yet.</em></p>
-    {% endif %}
+        <h3 class="mt-4">📍 Our Address</h3>
+        {% if location %}
+            <p>{{ location.address }}, {{ location.city }}, {{ location.state }} - {{ location.zip_code }}</p>
+        {% else %}
+            <p><em>No address added yet.</em></p>
+        {% endif %}
 
-    <a href="/api/notes/" class="btn btn-success btn-lg">View Notes</a>
+        <a href="/api/notes/" class="btn btn-success btn-lg">View Notes</a>
     
     </div>
 </body>
